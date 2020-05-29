@@ -41,8 +41,8 @@ export default {
       this.ToDoItems.push({id:uniqueId('todo-'), label: toDoLabel, done: false});
     },
     updateDoneStatus(toDoId) {
-      const toDoToUpdate = this.ToDoItems.find(item => item.id === toDoId)
-      toDoToUpdate.done = !toDoToUpdate.done
+      const toDoToUpdate = this.ToDoItems.find(item => item.id === toDoId);
+      toDoToUpdate.done = !(toDoToUpdate.done)
     },
     deleteToDo(toDoId) {
       const itemIndex = this.ToDoItems.findIndex(item => item.id === toDoId);
