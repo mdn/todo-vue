@@ -35,7 +35,7 @@ export default {
   },
   methods: {
     onSubmit() {
-      if (this.newLabel && this.newLabel !== this.label) {
+      if (this.newLabel) {
         this.$emit("item-edited", this.newLabel);
       }
     },
