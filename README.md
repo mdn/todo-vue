@@ -45,4 +45,4 @@ By participating in and contributing to our projects and discussions, you acknow
 
 ## License
 
-This project is licensed under the [LICENSE](LICENSE.md).
+This project is licensed under the [LICENSE](LICENSE).
