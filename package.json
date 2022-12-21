@@ -2,6 +2,7 @@
   "name": "moz-todo-vue",
   "version": "0.2.0",
   "private": true,
+  "homepage": "https://mdn.github.io/todo-vue/",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
