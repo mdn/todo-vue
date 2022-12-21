@@ -4,7 +4,7 @@ Sample todo app built with the Vue framework.
 For the accompanying documentation, see
 [Understanding client-side JavaScript frameworks: Vue tutorials](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks#vue_tutorials).
 
-For the live version, see https://mdn.github.io/todo-vue/dist/.
+For the live version, see https://mdn.github.io/todo-vue/.
 
 ## Getting Started
 
