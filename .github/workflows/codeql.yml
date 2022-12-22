@@ -22,7 +22,7 @@ jobs:
 
     strategy:
       matrix:
-        language: ["javascript", "vue"]
+        language: ["javascript"]
 
     steps:
       - name: Checkout repository
