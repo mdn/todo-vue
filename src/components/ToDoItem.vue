@@ -6,18 +6,21 @@
         class="checkbox"
         :id="id"
         :checked="isDone"
-        @change="$emit('checkbox-changed')"
-      />
-      <label :for="id" class="checkbox-label">{{label}}</label>
+        @change="$emit('checkbox-changed')" />
+      <label :for="id" class="checkbox-label">{{ label }}</label>
     </div>
     <div class="btn-group">
-      <button type="button" class="btn" ref="editButton" @click="toggleToItemEditForm">
+      <button
+        type="button"
+        class="btn"
+        ref="editButton"
+        @click="toggleToItemEditForm">
         Edit
-        <span class="visually-hidden">{{label}}</span>
+        <span class="visually-hidden">{{ label }}</span>
       </button>
       <button type="button" class="btn btn__danger" @click="deleteToDo">
         Delete
-        <span class="visually-hidden">{{label}}</span>
+        <span class="visually-hidden">{{ label }}</span>
       </button>
     </div>
   </div>
@@ -26,31 +29,30 @@
     :id="id"
     :label="label"
     @item-edited="itemEdited"
-    @edit-cancelled="editCancelled"
-  ></to-do-item-edit-form>
+    @edit-cancelled="editCancelled"></to-do-item-edit-form>
 </template>
 
 <script>
-import ToDoItemEditForm from "./ToDoItemEditForm";
+import ToDoItemEditForm from "./ToDoItemEditForm.vue";
 
 export default {
   components: {
-    ToDoItemEditForm
+    ToDoItemEditForm,
   },
   props: {
     label: { required: true, type: String },
     done: { default: false, type: Boolean },
-    id: { required: true, type: String }
+    id: { required: true, type: String },
   },
   data() {
     return {
-      isEditing: false
+      isEditing: false,
     };
   },
   computed: {
     isDone() {
       return this.done;
-    }
+    },
   },
   methods: {
     deleteToDo() {
@@ -74,8 +76,8 @@ export default {
         const editButtonRef = this.$refs.editButton;
         editButtonRef.focus();
       });
-    }
-  }
+    },
+  },
 };
 </script>
 

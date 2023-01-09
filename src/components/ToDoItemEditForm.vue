@@ -1,17 +1,22 @@
 <template>
   <form class="stack-small" @submit.prevent="onSubmit">
     <div>
-      <label class="edit-label">Edit Name for &quot;{{label}}&quot;</label>
-      <input :id="id" ref="labelInput" type="text" autocomplete="off" v-model.lazy.trim="newLabel" />
+      <label class="edit-label">Edit Name for &quot;{{ label }}&quot;</label>
+      <input
+        :id="id"
+        ref="labelInput"
+        type="text"
+        autocomplete="off"
+        v-model.lazy.trim="newLabel" />
     </div>
     <div class="btn-group">
       <button type="button" class="btn" @click="onCancel">
         Cancel
-        <span class="visually-hidden">editing {{label}}</span>
+        <span class="visually-hidden">editing {{ label }}</span>
       </button>
       <button type="submit" class="btn btn__primary">
         Save
-        <span class="visually-hidden">edit for {{label}}</span>
+        <span class="visually-hidden">edit for {{ label }}</span>
       </button>
     </div>
   </form>
@@ -21,16 +26,16 @@ export default {
   props: {
     label: {
       type: String,
-      required: true
+      required: true,
     },
     id: {
       type: String,
-      required: true
-    }
+      required: true,
+    },
   },
   data() {
     return {
-      newLabel: this.label
+      newLabel: this.label,
     };
   },
   methods: {
@@ -44,9 +49,9 @@ export default {
     },
   },
   mounted() {
-     const labelInputRef = this.$refs.labelInput;
-     labelInputRef.focus();
-  }
+    const labelInputRef = this.$refs.labelInput;
+    labelInputRef.focus();
+  },
 };
 </script>
 <style scoped>
