@@ -3,6 +3,9 @@
   "version": "0.2.0",
   "private": true,
   "homepage": "https://mdn.github.io/todo-vue/",
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
