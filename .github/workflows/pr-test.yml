@@ -1,0 +1,17 @@
+name: PR test
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-lint:
+    runs-on: ubuntu-latest
+    if: github.repository == 'mdn/todo-vue'
+    steps:
+      - uses: actions/checkout@v3
+      - run: |
+          npm ci
+          npm run build
+          npm run lint
