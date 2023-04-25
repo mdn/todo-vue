@@ -12,7 +12,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "core-js": "^3.28.0",
+    "core-js": "^3.29.1",
     "lodash.uniqueid": "^4.0.1",
     "vue": "^3.2.47"
   },
@@ -21,7 +21,7 @@
     "@vue/cli-plugin-eslint": "^5.0.8",
     "@vue/cli-service": "^5.0.8",
     "@babel/eslint-parser": "^7.21.3",
-    "eslint": "^8.34.0",
+    "eslint": "^8.36.0",
     "eslint-plugin-vue": "^9.9.0",
     "vue-template-compiler": "^2.7.14"
   }
