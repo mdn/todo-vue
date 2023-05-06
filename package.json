@@ -3,22 +3,25 @@
   "version": "0.2.0",
   "private": true,
   "homepage": "https://mdn.github.io/todo-vue/",
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "core-js": "^3.27.1",
+    "core-js": "^3.29.1",
     "lodash.uniqueid": "^4.0.1",
-    "vue": "^3.2.45"
+    "vue": "^3.2.47"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^5.0.8",
     "@vue/cli-plugin-eslint": "^5.0.8",
     "@vue/cli-service": "^5.0.8",
-    "@babel/eslint-parser": "^7.19.1",
-    "eslint": "^8.32.0",
+    "@babel/eslint-parser": "^7.21.3",
+    "eslint": "^8.36.0",
     "eslint-plugin-vue": "^9.9.0",
     "vue-template-compiler": "^2.7.14"
   }
