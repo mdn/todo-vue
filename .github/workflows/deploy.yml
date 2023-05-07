@@ -22,6 +22,7 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    if: github.repository == 'mdn/todo-vue'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -45,4 +46,4 @@ jobs:
           path: "dist"
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v2
