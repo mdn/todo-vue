@@ -14,7 +14,7 @@
   "dependencies": {
     "core-js": "^3.33.3",
     "lodash.uniqueid": "^4.0.1",
-    "vue": "^3.3.8"
+    "vue": "^3.3.9"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^5.0.8",
