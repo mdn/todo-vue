@@ -15,8 +15,8 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
-    "lodash.uniqueid": "^4.0.1",
-    "vue": "^3.3.11"
+    "nanoid": "^5.0.4",
+    "vue": "^3.4.7"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.3.3",
