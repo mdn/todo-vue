@@ -22,7 +22,7 @@
     "@vue/cli-service": "^5.0.8",
     "@babel/eslint-parser": "^7.23.9",
     "eslint": "^8.56.0",
-    "eslint-plugin-vue": "^9.20.1",
+    "eslint-plugin-vue": "^9.21.0",
     "vue-template-compiler": "^2.7.16"
   }
 }
