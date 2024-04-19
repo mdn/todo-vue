@@ -1,7 +1,3 @@
-### Node ###
-dist
-node_modules
-
 ### Django ###
 *.log
 *.pot
