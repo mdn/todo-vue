@@ -1,5 +1,5 @@
 {
-  "name": "moz-todo-vue",
+  "name": "moz-todo-django-vue",
   "version": "0.2.0",
   "private": true,
   "homepage": "https://mdn.github.io/todo-vue/",
@@ -14,13 +14,14 @@
   "dependencies": {
     "core-js": "^3.37.0",
     "lodash.uniqueid": "^4.0.1",
-    "vue": "^3.4.23"
+    "vue": "^3.4.23",
+    "vuex": "^4.1.0"
   },
   "devDependencies": {
+    "@babel/eslint-parser": "^7.24.1",
     "@vue/cli-plugin-babel": "^5.0.8",
     "@vue/cli-plugin-eslint": "^5.0.8",
     "@vue/cli-service": "^5.0.8",
-    "@babel/eslint-parser": "^7.24.1",
     "eslint": "^8.57.0",
     "eslint-plugin-vue": "^9.25.0",
     "vue-template-compiler": "^2.7.16"

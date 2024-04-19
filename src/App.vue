@@ -2,7 +2,9 @@
   <div id="app">
     <h1>To-Do List</h1>
     <to-do-form @todo-added="addToDo"></to-do-form>
-    <h2 id="list-summary" ref="listSummary" tabindex="-1">{{ listSummary }}</h2>
+    <h2 id="list-summary" class="center" ref="listSummary" tabindex="-1">
+      {{ listSummary }}
+    </h2>
     <ul aria-labelledby="list-summary" class="stack-large">
       <li v-for="item in ToDoItems" :key="item.id">
         <to-do-item
@@ -21,7 +23,6 @@
 <script>
 import ToDoItem from "./components/ToDoItem.vue";
 import ToDoForm from "./components/ToDoForm.vue";
-import uniqueId from "lodash.uniqueid";
 
 export default {
   name: "app",
@@ -29,48 +30,33 @@ export default {
     ToDoItem,
     ToDoForm,
   },
-  data() {
-    return {
-      ToDoItems: [
-        { id: uniqueId("todo-"), label: "Learn Vue", done: false },
-        {
-          id: uniqueId("todo-"),
-          label: "Create a Vue project with the CLI",
-          done: true,
-        },
-        { id: uniqueId("todo-"), label: "Have fun", done: true },
-        { id: uniqueId("todo-"), label: "Create a to-do list", done: false },
-      ],
-    };
-  },
   methods: {
     addToDo(toDoLabel) {
-      this.ToDoItems.push({
-        id: uniqueId("todo-"),
-        label: toDoLabel,
-        done: false,
-      });
+      this.$store.dispatch("todo/addItem", { toDoLabel });
     },
     updateDoneStatus(toDoId) {
-      const toDoToUpdate = this.ToDoItems.find((item) => item.id === toDoId);
-      toDoToUpdate.done = !toDoToUpdate.done;
+      this.$store.dispatch("todo/editItem", { type: "status", id: toDoId });
     },
     deleteToDo(toDoId) {
-      const itemIndex = this.ToDoItems.findIndex((item) => item.id === toDoId);
-      this.ToDoItems.splice(itemIndex, 1);
+      this.$store.dispatch("todo/deleteItem", { id: toDoId });
       this.$refs.listSummary.focus();
     },
     editToDo(toDoId, newLabel) {
-      const toDoToEdit = this.ToDoItems.find((item) => item.id === toDoId);
-      toDoToEdit.label = newLabel;
+      this.$store.dispatch("todo/editItem", {
+        type: "label",
+        id: toDoId,
+        newLabel,
+      });
     },
   },
   computed: {
+    ToDoItems() {
+      return this.$store.getters["todo/items"];
+    },
     listSummary() {
-      const numberFinishedItems = this.ToDoItems.filter(
-        (item) => item.done
-      ).length;
-      return `${numberFinishedItems} out of ${this.ToDoItems.length} items completed`;
+      const totalItems = this.$store.getters["todo/totalDoneItems"];
+      const doneItems = this.$store.getters["todo/totalItems"];
+      return `${totalItems} out of ${doneItems} items completed`;
     },
   },
 };
@@ -184,5 +170,8 @@ export default {
   text-align: center;
   margin: 0;
   margin-bottom: 1rem;
+}
+.center {
+  text-align: center;
 }
 </style>
