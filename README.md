@@ -38,7 +38,7 @@ npm run lint
 python manage.py makemigrations && python manage.py migrate
 ```
 
-### Run django server
+### Run django server for development
 
 ```bash
 python manage.py runserver
