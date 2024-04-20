@@ -1,6 +1,6 @@
 # todo-vue
 
-Sample todo app built with the Vue framework.
+Sample todo app built with the Django & Vue framework.
 For the accompanying documentation, see
 [Understanding client-side JavaScript frameworks: Vue tutorials](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks#vue_tutorials).
 
@@ -30,6 +30,18 @@ npm run build
 
 ```bash
 npm run lint
+```
+
+### Migrate database
+
+```bash
+python manage.py makemigrations && python manage.py migrate
+```
+
+### Run django server
+
+```bash
+python manage.py runserver
 ```
 
 ### Customize configuration
