@@ -35,16 +35,16 @@ export default {
       this.$store.dispatch("todo/addItem", { toDoLabel });
     },
     updateDoneStatus(toDoId) {
-      this.$store.dispatch("todo/editItem", { type: "status", id: toDoId });
+      this.$store.dispatch("todo/editItem", { type: "status", itemId: toDoId });
     },
     deleteToDo(toDoId) {
-      this.$store.dispatch("todo/deleteItem", { id: toDoId });
+      this.$store.dispatch("todo/deleteItem", { itemId: toDoId });
       this.$refs.listSummary.focus();
     },
     editToDo(toDoId, newLabel) {
       this.$store.dispatch("todo/editItem", {
         type: "label",
-        id: toDoId,
+        itemId: toDoId,
         newLabel,
       });
     },
@@ -58,6 +58,9 @@ export default {
       const doneItems = this.$store.getters["todo/totalItems"];
       return `${totalItems} out of ${doneItems} items completed`;
     },
+  },
+  created() {
+    this.$store.dispatch("todo/initialItems");
   },
 };
 </script>

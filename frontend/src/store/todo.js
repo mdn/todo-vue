@@ -1,21 +1,14 @@
-import uniqueId from "lodash.uniqueid";
-
 export default {
   namespaced: true,
   state() {
     return {
-      items: [
-        { id: uniqueId(), label: "Learn Vue", done: false },
-        {
-          id: uniqueId(),
-          label: "Create a Vue project with the CLI",
-          done: true,
-        },
-        { id: uniqueId(), label: "Create a to-do list", done: false },
-      ],
+      items: [],
     };
   },
   mutations: {
+    initialItems(state, items) {
+      state.items = items;
+    },
     addItem(state, item) {
       state.items.push(item);
     },
@@ -42,26 +35,79 @@ export default {
     totalDoneItems(state) {
       return state.items.filter((item) => item.done).length;
     },
+    findItemById: (state) => (id) => {
+      return state.items.find((item) => item.id === id);
+    },
   },
   actions: {
-    addItem(context, payload) {
-      const id = uniqueId();
-      const label = payload.toDoLabel;
-      const done = false;
-      context.commit("addItem", { id, label, done });
-    },
-    editItem(context, payload) {
-      if (payload.type === "status") {
-        context.commit("toggleDoneStatus", payload.id);
-      } else if (payload.type === "label") {
-        context.commit("editItemLabel", {
-          id: payload.id,
-          label: payload.newLabel,
-        });
+    async initialItems(context) {
+      const response = await fetch("http://127.0.0.1:8000/todo/");
+      if (response.ok) {
+        const items = await response.json();
+        context.commit("initialItems", items);
       }
     },
-    deleteItem(context, payload) {
-      context.commit("deleteItem", payload.id);
+    async addItem(context, payload) {
+      const response = await fetch("http://127.0.0.1:8000/todo/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          label: payload.toDoLabel,
+        }),
+      });
+      if (response.ok) {
+        const item = await response.json();
+        context.commit("addItem", item);
+      }
+    },
+    async editItem(context, payload) {
+      if (payload.type === "status") {
+        const item = context.getters["findItemById"](payload.itemId);
+        const response = await fetch(`http://127.0.0.1:8000/todo/${item.id}`, {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            done: !item.done,
+          }),
+        });
+        if (response.ok) {
+          context.commit("toggleDoneStatus", item.id);
+        }
+      } else if (payload.type === "label") {
+        const response = await fetch(
+          `http://127.0.0.1:8000/todo/${payload.itemId}`,
+          {
+            method: "PATCH",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              label: payload.newLabel,
+            }),
+          }
+        );
+        if (response.ok) {
+          context.commit("editItemLabel", {
+            id: payload.itemId,
+            label: payload.newLabel,
+          });
+        }
+      }
+    },
+    async deleteItem(context, payload) {
+      const response = await fetch(
+        `http://127.0.0.1:8000/todo/${payload.itemId}`,
+        {
+          method: "DELETE",
+        }
+      );
+      if (response.ok) {
+        context.commit("deleteItem", payload.itemId);
+      }
     },
   },
 };
