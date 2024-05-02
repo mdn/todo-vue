@@ -16,15 +16,15 @@
   },
   "dependencies": {
     "nanoid": "^5.0.7",
-    "vue": "^3.4.26"
+    "vue": "^3.4.21"
   },
   "devDependencies": {
-    "@rushstack/eslint-patch": "^1.10.2",
+    "@rushstack/eslint-patch": "^1.8.0",
     "@vitejs/plugin-vue": "^5.0.4",
     "@vue/eslint-config-prettier": "^9.0.0",
-    "eslint": "^8.49.0",
-    "eslint-plugin-vue": "^9.25.0",
+    "eslint": "^8.57.0",
+    "eslint-plugin-vue": "^9.23.0",
     "prettier": "^3.2.5",
-    "vite": "^5.2.11"
+    "vite": "^5.2.8"
   }
 }
