@@ -15,16 +15,16 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
-    "nanoid": "^5.0.4",
-    "vue": "^3.4.7"
+    "nanoid": "^5.0.7",
+    "vue": "^3.4.26"
   },
   "devDependencies": {
-    "@rushstack/eslint-patch": "^1.3.3",
-    "@vitejs/plugin-vue": "^4.5.2",
-    "@vue/eslint-config-prettier": "^8.0.0",
+    "@rushstack/eslint-patch": "^1.10.2",
+    "@vitejs/plugin-vue": "^5.0.4",
+    "@vue/eslint-config-prettier": "^9.0.0",
     "eslint": "^8.49.0",
-    "eslint-plugin-vue": "^9.17.0",
-    "prettier": "^3.0.3",
-    "vite": "^5.0.10"
+    "eslint-plugin-vue": "^9.25.0",
+    "prettier": "^3.2.5",
+    "vite": "^5.2.11"
   }
 }
