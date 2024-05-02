@@ -1,28 +1,30 @@
 {
   "name": "moz-todo-vue",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "private": true,
   "homepage": "https://mdn.github.io/todo-vue/",
+  "type": "module",
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=20.0.0"
   },
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
+    "format": "prettier --write src/"
   },
   "dependencies": {
-    "core-js": "^3.37.0",
-    "lodash.uniqueid": "^4.0.1",
-    "vue": "^3.4.26"
+    "nanoid": "^5.0.7",
+    "vue": "^3.4.21"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^5.0.8",
-    "@vue/cli-plugin-eslint": "^5.0.8",
-    "@vue/cli-service": "^5.0.8",
-    "@babel/eslint-parser": "^7.24.5",
+    "@rushstack/eslint-patch": "^1.8.0",
+    "@vitejs/plugin-vue": "^5.0.4",
+    "@vue/eslint-config-prettier": "^9.0.0",
     "eslint": "^8.57.0",
-    "eslint-plugin-vue": "^9.25.0",
-    "vue-template-compiler": "^2.7.16"
+    "eslint-plugin-vue": "^9.23.0",
+    "prettier": "^3.2.5",
+    "vite": "^5.2.8"
   }
 }

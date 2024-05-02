@@ -21,7 +21,7 @@
 <script>
 import ToDoItem from "./components/ToDoItem.vue";
 import ToDoForm from "./components/ToDoForm.vue";
-import uniqueId from "lodash.uniqueid";
+import { nanoid } from "nanoid";
 
 export default {
   name: "app",
@@ -32,21 +32,21 @@ export default {
   data() {
     return {
       ToDoItems: [
-        { id: uniqueId("todo-"), label: "Learn Vue", done: false },
+        { id: "todo-" + nanoid(), label: "Learn Vue", done: false },
         {
-          id: uniqueId("todo-"),
+          id: "todo-" + nanoid(),
           label: "Create a Vue project with the CLI",
           done: true,
         },
-        { id: uniqueId("todo-"), label: "Have fun", done: true },
-        { id: uniqueId("todo-"), label: "Create a to-do list", done: false },
+        { id: "todo-" + nanoid(), label: "Have fun", done: true },
+        { id: "todo-" + nanoid(), label: "Create a to-do list", done: false },
       ],
     };
   },
   methods: {
     addToDo(toDoLabel) {
       this.ToDoItems.push({
-        id: uniqueId("todo-"),
+        id: "todo-" + nanoid(),
         label: toDoLabel,
         done: false,
       });
@@ -68,7 +68,7 @@ export default {
   computed: {
     listSummary() {
       const numberFinishedItems = this.ToDoItems.filter(
-        (item) => item.done
+        (item) => item.done,
       ).length;
       return `${numberFinishedItems} out of ${this.ToDoItems.length} items completed`;
     },
@@ -162,7 +162,9 @@ export default {
   padding: 1rem;
   padding-top: 0;
   position: relative;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 2.5rem 5rem 0 rgba(0, 0, 0, 0.1);
+  box-shadow:
+    0 2px 4px 0 rgba(0, 0, 0, 0.2),
+    0 2.5rem 5rem 0 rgba(0, 0, 0, 0.1);
 }
 @media screen and (min-width: 550px) {
   #app {
