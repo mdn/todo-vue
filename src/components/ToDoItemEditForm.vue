@@ -21,6 +21,7 @@
     </div>
   </form>
 </template>
+
 <script>
 export default {
   props: {
@@ -42,6 +43,8 @@ export default {
     onSubmit() {
       if (this.newLabel && this.newLabel !== this.label) {
         this.$emit("item-edited", this.newLabel);
+      } else {
+        this.onCancel();
       }
     },
     onCancel() {
@@ -54,6 +57,7 @@ export default {
   },
 };
 </script>
+
 <style scoped>
 .edit-label {
   font-family: Arial, sans-serif;
