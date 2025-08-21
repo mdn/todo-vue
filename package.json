@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "nanoid": "^5.1.5",
-    "vue": "^3.5.18"
+    "vue": "^3.5.19"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.12.0",
