@@ -5,7 +5,7 @@
   "homepage": "https://mdn.github.io/todo-vue/",
   "type": "module",
   "engines": {
-    "node": ">=22"
+    "node": ">=24"
   },
   "scripts": {
     "dev": "vite",
@@ -26,5 +26,6 @@
     "eslint-plugin-vue": "^9.33.0",
     "prettier": "^3.7.4",
     "vite": "^5.4.20"
-  }
+  },
+  "packageManager": "npm@11.6.2"
 }
