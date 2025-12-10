@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://mdn.github.io/todo-vue/",
   "type": "module",
+  "packageManager": "npm@11.6.2",
   "engines": {
     "node": ">=24"
   },
@@ -26,6 +27,5 @@
     "eslint-plugin-vue": "^9.33.0",
     "prettier": "^3.7.4",
     "vite": "^5.4.20"
-  },
-  "packageManager": "npm@11.6.2"
+  }
 }
