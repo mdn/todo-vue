@@ -1,9 +1,10 @@
-name: PR test
+name: Test
 
 on:
-  pull_request:
+  push:
     branches:
       - main
+  pull_request:
 
 # No GITHUB_TOKEN permissions, as we don't use it.
 permissions: {}
