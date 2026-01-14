@@ -1,5 +1,5 @@
 {
-  "name": "moz-todo-vue",
+  "name": "@mdn/todo-vue",
   "version": "1.0.0",
   "private": true,
   "homepage": "https://mdn.github.io/todo-vue/",
