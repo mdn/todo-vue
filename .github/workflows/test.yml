@@ -6,7 +6,7 @@ on:
       - main
   pull_request:
 
-# No GITHUB_TOKEN permissions, as we don't use it.
+    # No GITHUB_TOKEN permissions, as we don't use it.
 permissions: {}
 
 jobs:
@@ -25,15 +25,16 @@ jobs:
         with:
           cache: npm
           node-version-file: .nvmrc
+          check-latest: true
 
       - run: npm ci
 
       - run: npm run build
-  
+
   lint:
     runs-on: ubuntu-latest
     if: github.repository == 'mdn/todo-vue'
-    
+
     steps:
       - name: Checkout
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
@@ -45,6 +46,7 @@ jobs:
         with:
           cache: npm
           node-version-file: .nvmrc
+          check-latest: true
 
       - run: npm ci
 
