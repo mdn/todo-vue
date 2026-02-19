@@ -12,8 +12,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
-    "format": "prettier --write src/"
+    "lint": "eslint && prettier --check .",
+    "fix": "eslint --fix && prettier --write ."
   },
   "dependencies": {
     "nanoid": "^5.1.6",
