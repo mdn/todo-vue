@@ -17,14 +17,14 @@
   },
   "dependencies": {
     "nanoid": "^5.1.6",
-    "vue": "^3.5.27"
+    "vue": "^3.5.29"
   },
   "devDependencies": {
-    "@rushstack/eslint-patch": "^1.15.0",
     "@vitejs/plugin-vue": "^6.0.4",
-    "@vue/eslint-config-prettier": "^9.0.0",
-    "eslint": "^8.57.1",
-    "eslint-plugin-vue": "^9.33.0",
+    "@vue/eslint-config-prettier": "^10.2.0",
+    "eslint": "^9.39.3",
+    "eslint-plugin-vue": "^10.8.0",
+    "globals": "^17.3.0",
     "prettier": "^3.8.1",
     "vite": "^6.4.1"
   }
