@@ -16,7 +16,7 @@
     "fix": "eslint --fix && prettier --write ."
   },
   "dependencies": {
-    "nanoid": "^5.1.7",
+    "nanoid": "^5.1.9",
     "vue": "^3.5.32"
   },
   "devDependencies": {
