@@ -83,7 +83,7 @@ export default {
 
 <style scoped>
 .custom-checkbox > .checkbox-label {
-  font-family: Arial, sans-serif;
+  font-family: "Nunito", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -95,7 +95,7 @@ export default {
   margin-bottom: 5px;
 }
 .custom-checkbox > .checkbox {
-  font-family: Arial, sans-serif;
+  font-family: "Nunito", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -109,7 +109,7 @@ export default {
   margin-top: 0;
   padding: 5px;
   border: 2px solid #0b0c0c;
-  border-radius: 0;
+  border-radius: 7px;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -120,7 +120,7 @@ export default {
   box-shadow: inset 0 0 0 2px;
 }
 .custom-checkbox {
-  font-family: Arial, sans-serif;
+  font-family: "Nunito", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: 400;
   font-size: 1.6rem;
@@ -163,7 +163,9 @@ export default {
   width: 40px;
   height: 40px;
   border: 2px solid currentColor;
+  border-radius: 7px;
   background: transparent;
+  transition: all 0.2s ease;
 }
 .custom-checkbox > input[type="checkbox"]:focus + label::before {
   border-width: 4px;

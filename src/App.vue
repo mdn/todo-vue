@@ -78,11 +78,31 @@ export default {
 
 <style>
 /* Global styles */
+* {
+  font-family: "Nunito", sans-serif;
+}
+input[type="text"] {
+  border-radius: 7px;
+  border: 2px solid #ccc;
+  padding: 0.8rem;
+  transition: all 0.2s ease;
+}
+input[type="text"]:focus {
+  border-color: #4d4d4d;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(77, 77, 77, 0.2);
+}
 .btn {
   padding: 0.8rem 1rem 0.7rem;
   border: 0.2rem solid #4d4d4d;
   cursor: pointer;
   text-transform: capitalize;
+  border-radius: 7px;
+  transition: all 0.2s ease;
+}
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 .btn__danger {
   color: #fff;
@@ -118,6 +138,7 @@ export default {
   display: inline-block;
   width: 100%;
   font-size: 1.9rem;
+  border-radius: 7px;
 }
 [class*="__lg"]:not(:last-child) {
   margin-bottom: 1rem;
@@ -165,6 +186,7 @@ export default {
   box-shadow:
     0 2px 4px 0 rgba(0, 0, 0, 0.2),
     0 2.5rem 5rem 0 rgba(0, 0, 0, 0.1);
+  border-radius: 7px;
 }
 @media screen and (min-width: 550px) {
   #app {
