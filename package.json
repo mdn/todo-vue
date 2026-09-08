@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "https://mdn.github.io/todo-vue/",
   "type": "module",
-  "packageManager": "npm@11.12.1",
+  "packageManager": "npm@11.19.0",
   "engines": {
     "node": ">=24"
   },
