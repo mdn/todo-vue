@@ -27,5 +27,8 @@
     "globals": "17.7.0",
     "prettier": "3.8.4",
     "vite": "8.1.0"
+  },
+  "allowScripts": {
+    "fsevents": true
   }
 }
